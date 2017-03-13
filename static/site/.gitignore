@@ -1,0 +1,12 @@
+.DS_Store
+.bowerrc
+CHANGELOG.md
+gulpfile.js
+package.json
+bower_components
+node_modules
+npm-debug.log
+img
+css
+index-old.html
+custom.scss

@@ -1,0 +1,222 @@
+
+.off-canvas ul li{
+    //border: 1px solid $primary-color;
+   a{
+        color: $primary-color;
+    }
+    a:hover{
+        background: $gold;
+    }
+}
+.off-canvas{
+    background: $white;
+}
+.touch-canvas:hover, .touch-canvas:active{
+    background: $primary-color;
+}
+
+
+div.contact-us-button{
+	position: fixed; 
+	z-index: 1;
+
+ 
+	@include breakpoint(xlarge){
+		right: rem-calc(-25);
+	} 
+	 
+	
+}
+
+.reveal{
+	background: $secondary-color;
+	border-radius: rem-calc(5);
+}
+
+div#signup-page{
+	color: black;
+}
+#ticket-class{
+       padding: rem-calc(5 2); 
+   div:hover{
+       background: $light-gray;
+   }
+}
+.bold{
+    font-weight: bold;
+}
+#number-of-passengers{
+    width: 220px;
+}
+#number-of-passengers{ 
+
+    .adults, .children, .infants-in-seat, .infants-on-laps{
+        overflow: hidden;
+        .border{
+            border-top: 1px solid $light-gray;
+            border-bottom: 1px solid $light-gray;
+            margin: 0;
+        }
+        margin-bottom: rem-calc(5);
+        i, span{
+            float: left;
+            margin-right: rem-calc(5);
+            font-size: rem-calc(12);
+        }
+        i{
+            padding: rem-calc(2 5);
+            background: $light-gray;
+            color: $black;
+        }
+        span{
+            padding: rem-calc(0 5);
+        }
+        .gray-text{
+            color: darken($light-gray, 50%);
+        }
+    }
+
+}
+.tabs-div{
+    margin-top: rem-calc(20);
+}
+div.top-header div.search-form ul.search-menu li.active a {
+    color: #fefefe;
+    background: $primary-color;
+    border-top-right-radius: rem-calc(15);
+ 	border-top-left-radius: rem-calc(15);
+
+}
+
+input::-webkit-input-placeholder {
+    color: $primary-color;
+    font: solid 14px Georgia;
+}
+
+input::-moz-placeholder {
+    color: $primary-color;
+    font: solid 14px Georgia;
+}
+
+input::-ms-input-placeholder{
+    color: $primary-color;
+    font: solid 14px Georgia;
+}
+
+.fi-list{
+    color: $primary-color;
+	margin: rem-calc(10);
+    font-size: rem-calc(20);	
+}
+.tabs{
+    border-top: none;
+    border-right: none;
+}
+.tabs-title > a{
+    font-size: rem-calc(14);
+}
+.tabs li .is-active{
+    border-bottom: 1px solid $light-gray;
+}
+.tabs-content{
+ 
+    #flight{
+        padding: rem-calc(0 16);
+    }
+    .tabs-menu-medium{
+        #trip-type-menu{
+            li a{
+                background: $light-gray;
+                border: 1px solid darken($light-gray, 20%);
+                font: bold 11px Georgia serif;
+                padding: rem-calc(5 5);
+                margin: rem-calc(10 0);
+            }
+            .active{
+                a {
+                    background: darken($light-gray, 50%);
+                }
+            }
+        }
+        #class-passenger{
+            //margin-right: rem-calc(6);
+            li a{
+                font: bold 11px Georgia serif;
+                border: 1px solid $light-gray;
+                color: $black;
+                background: $light-gray;
+                padding: rem-calc(5 5);
+                margin: rem-calc(10 5);
+                border-radius: rem-calc(2);
+            }
+
+        }
+    }
+    .tabs-menu-small{
+        font: 12px Georgia serif;
+
+    }
+}
+.input-group-field{
+    @include breakpoint(small){
+        font-size: rem-calc(12);
+    }
+}
+
+footer {
+    margin: rem-calc(5 0 0); 
+    background: $secondary-color;
+	padding-top:rem-calc(30);
+	color: $black;
+
+    .contact-information, .about-us{
+        color: lighten($primary-color, 10%);
+        font: 18px Georgia serif;
+    }
+	.menu{
+		a {
+			color:$black;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		li{
+			:hover{
+				color: blue;
+			}
+		}
+	}
+	.contact-information {
+		li {
+			position: relative;
+			height: 100px;
+			padding-left: 60px;
+			padding-top:35px;
+ 
+			&:first-child{
+			padding-top: 22px;
+			}
+			i{
+				font-size: rem-calc(60);
+				position: absolute;
+				top:0;
+				left:0; 
+			} 
+		}
+
+		
+	}
+	.social {
+		i {
+			font-size: rem-calc(60);
+			color: $black;
+		}
+	}
+	p.copyright {
+		padding: rem-calc(20 0);
+		background-color: $primary-color;
+		color: $white;
+		margin:0;
+	}
+ 
+}
+

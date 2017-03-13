@@ -1,0 +1,31 @@
+.flight-results{
+    margin-top: rem-calc(20);
+    .results-filter{
+        border-radius: rem-calc(5);
+        background: $secondary-color;
+        height: rem-calc(400);
+    }
+    .trip-info{
+        background: lighten($gold, 20%);
+        border-radius: rem-calc(5);
+
+        .select-div{
+            background: $white;
+            border: 1px solid $gold;
+            height: rem-calc(150);
+            border-radius: rem-calc(5);
+
+            div{
+                height: rem-calc(40);
+                margin-top: rem-calc(10);
+            }
+            button{
+                border-radius: rem-calc(3);
+                font: bold 18px Georgia serif;
+                height: rem-calc(30);
+                padding: rem-calc(0 18);
+            }
+        }
+
+    }
+}

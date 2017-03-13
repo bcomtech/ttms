@@ -1,0 +1,30 @@
+{% extends "site_layout.html" %}
+
+{% block content %}
+<div class="row ">
+    <div class="flight-results">
+    <div class="medium-3 columns results-filter" style="">dfdsfdsf</div>
+    <div class="medium-8 columns medium-offset-1 hide" style="height: 300px; background: blue;"> best price</div>
+    <div class="medium-8 columns trip-info" style="height: 150px; background: light-gray; margin-top: 10px;">
+        <div class= "row ">
+            <div class="medium-3 columns airline-logo" >
+                <img src="{{url_for('static', filename='site/img/logos/starbow.png')}}"> 
+            </div>
+            <div class="medium-6 columns ">
+                <span>ACC 15:40 ---> TML 16:40 1 hr 0 m</span>
+
+            </div>
+            <div class="medium-3 columns text-center select-div">
+                <div><span>$1,600</span></div> 
+                <div><span>One-way with taxes</span></div>
+                <div><button type="button" class="button small ">Select</button></div>
+            </div>
+
+        </div>
+
+    </div>
+    </div> <!--./flight-results -->
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,179 @@
+{% extends "site_layout.html" %}
+
+{% block content %}
+<!--...............................Dropdowns begin here ...................-->
+<div id="ticket-class" class="dropdown-pane" data-dropdown style="width: 200px;">
+    <div id="selected-class hide"></div>
+    <div ><a class="ticket-class">Economy</a></div>
+    <div ><a class="ticket-class">Premium Economy</a></div>
+    <div ><a class="ticket-class">Business class</a></div>
+    <div ><a class="ticket-class">First Class</a></div>
+</div>
+<div id="number-of-passengers" class="dropdown-pane " data-dropdown style="display: inline;">
+    <div class="adults">
+        <div class="controls">
+            <i class="fi-minus button border" id="adult-minus"></i>
+            <span class="border counts" id="adult-count">1</span>
+            <i class="fi-plus button border" id="adult-plus"></i>
+            <span class="bold"> Adults</span>
+        </div>
+    </div>
+   <div class="children">
+        <div class="controls">
+            <i class="fi-minus button border" id="children-minus"></i>
+            <span class="border counts" id="child-count">0</span>
+            <i class="fi-plus button border" id="children-plus"></i>
+            <span class="bold">Children</span><span class="gray-text">age 2-12</span>
+        </div>
+    </div> 
+    <div class="infants-in-seat">
+        <div class="controls">
+            <i class="fi-minus button border" id="infant-in-seat-minus"></i>
+            <span class="border counts" id="infant-in-seat-count">0</span>
+            <i class="fi-plus button border" id="infant-in-seat-plus"></i>
+            <span class="bold"> Infants</span><span class="gray-text">in seat</span>
+        </div>
+    </div>
+    <div class="infants-on-laps">
+        <div class="controls">
+            <i class="fi-minus button border" id="infant-on-lap-minus"></i>
+            <span class="border counts" id="infant-on-lap-count" >0</span>
+            <i class="fi-plus button border" id="infant-on-lap-plus"></i>
+            <span class="bold"> Infants</span><span class="gray-text">on lap</span>
+        </div>
+    </div>
+</div>
+<!--..............................Dropdowns end here ......................-->
+<div class="row">
+<div class="tabs-div">
+    <div class="large-6 small-12  large-offset-2 columns">
+        <ul class="tabs" data-active-colaps="true" data-tabs id="collapsing-tabs">
+            <li class="tabs-title is-active"><a href="#flight" aria-selected="true">Flights</a></li>
+            <li class="tabs-title"><a href="#panel2c">Buses</a></li>
+            <li class="tabs-title"><a href="#panel3c">Hotels</a></li>
+        </ul>
+       
+        <div class="tabs-content" data-tabs-content="collapsing-tabs" >
+            <div class="tabs-menu-medium hide-for-small-only">
+                <ul class="menu medium-5 columns " id="trip-type-menu">
+                    <li class="active" id="round-trip"><a href="#">Round trip</a></li>
+                    <li id="one-way"><a href="#" >One way</a></li>
+                    <li id="multi-city"><a href="#" >Multi-city</a></li>
+                </ul>
+                <ul class="menu medium-7 columns align-right" id="class-passenger">
+                    <li><a data-toggle="number-of-passengers" ><i id="passenger-count" style="font-style: normal;">1 adult</i>&#9662;</a></li>
+                    <li><a data-toggle="ticket-class"><i id="class" style="font-style: normal;">Economy</i>&#9662;</a></li>
+                </ul>
+            </div> <!-- ./tabs-menu-group -->
+            <div class="tabs-menu-small show-for-small-only">
+                <ul class="menu small-12 columns " id="class-passenger">
+                    <li><a>Round trip&nbsp;&#9662;</a></li>
+                    <li><a>Economy&nbsp;&#9662;</a></li>
+                    <li><a data-toggle="number-of-passengers">Adults 1&nbsp;&#9662;</a></li>
+                </ul>
+            </div> <!-- ./tabs-menu-group -->
+             <div class="tabs-panel is-active" id="flight">
+                <form method="post" action="">
+                    <div class="row">
+                        <div class="medium-6 small-6 columns">
+                            <div class="input-group">
+                                <span class="input-group-label"><i class="fi-marker"></i></span>
+                                {{ form.flyfrom(class_='autocomplete input-group-field', placeholder='From where') }}
+                            </div><!--./form-group -->
+                        </div>
+                        <div class="medium-6 small-6 columns">
+                            <div class="input-group">
+                                <span class="input-group-label"><i class="fi-marker"></i></span>
+                                {{ form.flyto(class_='input-group-field autocomplete', placeholder='To where') }}
+                            </div>
+                        </div>
+                        <!--<div class="medium-2 columns">
+                            <div class="input-group">
+                                {{ form.ticketClass(class_='input-group-field') }}
+                            </div>
+                        </div>-->
+
+                    </div>
+                    <div class="row">
+                        <div class="medium-6 small-6 columns">
+                            <div class="input-group">
+                                <span class="input-group-label"><i class="fi-calendar"></i></span>
+                                {{ form.flightDepartureDate(class_='input-group-field datepicker', id='flightDepartureDate') }}
+                            </div>
+                        </div>
+                        
+                        <div class="medium-6 small-6 columns">
+                            <div class="input-group flight-return-date">
+                                <span class="input-group-label"><i class="fi-calendar"></i></span>
+                                {{ form.flightReturnDate(class_='datepicker input-group-field', id='flightReturnDate') }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hide">
+                        
+                        <div class="medium-3 columns">
+                            <div class="input-group">
+                                <label class="show-for-small-only">Adults</label>
+                                <span class="input-group-label hide-for-small-only">Adults</span>
+                                {{ form.adults(class_='input-group-field') }}
+                            </div>
+                        </div>
+                        <div class="medium-3 columns">
+                            <div class="input-group">
+                                <label class="show-for-small-only">Children</label>
+                                <span class="input-group-label hide-for-small-only">children</span>
+                                {{ form.children(class_='input-group-field')}}
+                                
+                            </div>
+                        </div>
+                        <div class="medium-3 columns">
+                            <div class="input-group">
+                                <label class="show-for-small-only">infants</label>
+                                <span class="input-group-label hide-for-small-only">infants</span>
+                                {{ form.infants(class_='input-group-field')}}
+                            </div>
+                        </div>
+                        <div class="medium-3"></div>
+                    </div>
+                    <!--<button typte="submit"
+                        class="button">Search</button>-->
+                </form>
+            </div>
+            <div class="tabs-panel" id="panel2c">
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+            </div>
+            <div class="tabs-panel" id="panel3c">
+            </div>
+            <div class="tabs-panel" id="panel4c">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+    <div class="medium-2 columns show-for-large" style="background: blue;">advert</div>
+    <div class="medium-2 columns"></div>
+</div>
+        <!--<div class="flight-results row">
+        <div class="large-8 small-12 columns  trip-info" style="height: 150px; background: light-gray; margin-top: 10px;">
+            <div class= "row ">
+                <div class="medium-3 columns airline-logo" >
+                    <img src="{{url_for('static', filename='site/img/logos/starbow.png')}}"> 
+                </div>
+                <div class="medium-6 columns ">
+                    <span>ACC 15:40  TML 16:40 1 hr 0 m</span>
+
+                </div>
+                <div class="medium-3 columns text-center select-div">
+                    <div><span>$1,600</span></div> 
+                    <div><span>One-way with taxes</span></div>
+                    <div class="show-for-large"><button type="button" class="button small ">Select</button></div>
+                </div>
+
+            </div>
+
+        </div>
+        </div>--> <!--./flight-results -->
+    </div>
+
+
+      {% endblock content %}
+

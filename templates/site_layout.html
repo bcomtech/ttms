@@ -1,0 +1,135 @@
+<!doctype html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Travel & Tours</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='site/css/app.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='site/fonts/foundation-icons.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='site/css/jquery-ui.css')}}">
+    <!-- <link rel="icon" type="image/x-icon" href="ico.gif" />-->
+  </head>
+  <body>
+
+      <div class="banner hide-for-small show-for-large" >
+            <div class="row">
+      <div class="orbit " role="region" aria-label="Our Services" data-orbit data-options="animInFromLeft: fade-in; animInFromRight:fade-in; animOutToLeft: fade-out; animOutToRight: fade-out"> 
+        <ul class="orbit-container">
+          <button class="orbit-previous">
+            <span class="show-for-sr">Previous Slide</span>
+            &#9664; &#xFE0E;
+          </button>
+          <button class="orbit-next">
+            <span class="show-for-sr">Next Slide</span>
+            &#9654; 
+          </button>
+    
+          <li class="is-active orbit-slide"><a href="#"><img class="orbit-image "  src="{{url_for('static', filename='site/img/topads/bannerbus.png')}}"></a></li>
+          <li class="is-active orbit-slide"><a href="#"><img class="orbit-image" src="{{url_for('static', filename='site/img/topads/bannerplane.png')}}"></a></li>
+        </ul>
+    
+    </div>
+      
+    </div>
+      </div>
+    {% block content %}
+
+     {% endblock content %}
+
+     <footer>
+       <div class="row">
+         <ul class="menu medium-12 small-12 columns">
+           <li><a href="#">Menu</a></li>
+           <!-- <li><a href="#">Hotels</a></li> -->
+           <!-- <li><a href="#">Buses</a></li> -->
+           <!-- <li><a href="#">Cars</a></li> -->
+           <!-- <li><a href="#">Tour packages</a></li> -->
+         </ul>
+       </div>
+       <div class="row">
+         
+         <div class="contact-information large-3 columns">
+            <ul class="no-bullet horizontal">
+              <li><i class="fi-marker"></i><span>Hse #3A,
+              Ambasadorial Enclave
+              East Legon</span></li>
+              <li><i class="fi-telephone"></i><span>+233(0)302 542 359</span></li>
+              <li><i class="fi-mail"></i><span>info@witechtravel.com</span></li>
+            </ul>
+         </div>
+         <div class="about-us large-4 columns text-justify">
+            <h2>About Us</h2>
+             <p>Wi Tech Travel and Tour is an entity which takes care of all travel and tours requirements of our estimed clients all around the globe. Since inception in June 2015, Wi Tech Travel and Tour has ventured into new geographic areas and making utmost efforts to make the best deal available to our clients
+
+            Apart from ticketing (both domestic and international), we excel in designing tailor made tour packages for domestic, inbound and outbound tourists. Worldwide Hotel bookings, foreign exchange are also included in our services
+
+            Wi Tech Travel and Tour is a one-stop-shop company that offers a complete range of travel related services. </p>
+           <ul class="menu social align-right">
+             <li><a href="https://www.twitter.com">
+               <i class="fi-social-twitter"></i>
+             </a>
+             </li>
+             <li><a href="https://www.facebook.com/WitechTravelandTour/">
+               <i class="fi-social-facebook"></i>
+             </a>
+             </li>
+             
+           </ul>
+         </div>
+       </div>
+       <p class="text-center copyright">All rights reserved</p>
+     </footer>
+
+
+          </div><!-- ./off-canvas-content -->
+      
+
+    <script src="{{url_for('static', filename='site/bower_components/jquery/dist/jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='site/js/jquery-ui/jquery-ui.js')}}"></script>
+    <script src="{{url_for('static', filename='site/bower_components/what-input/dist/what-input.js')}}"></script>
+    <script src="{{url_for('static', filename='site/bower_components/foundation-sites/dist/js/foundation.js')}}"></script>
+    <script src="{{url_for('static', filename='site/js/app.js')}}"></script>
+    <script >
+     $( function() {
+        var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( ".autocomplete" ).autocomplete({
+      minLength: 1,
+      source: function( request, response ) {
+      $.ajax({
+        url: "airportsearch/"+ request.term,
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+          response(data);
+        }
+      });
+    } 
+  });
+  } );
+    </script>
+  </body>
+</html>
